@@ -1,25 +1,25 @@
 class PlugmemMcp < Formula
   desc "MCP stdio server exposing plugmem memory to AI agents."
   homepage "https://github.com/m62624/plugmem"
-  version "0.2.0"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/plugmem/releases/download/v0.2.0/plugmem-mcp-aarch64-apple-darwin.tar.xz"
-      sha256 "e19405983cd2f45004a22ecd51ce0cbdd388ce4dd4dcfaafcbd410f1bb6b5abe"
+      url "https://github.com/m62624/plugmem/releases/download/v0.3.0/plugmem-mcp-aarch64-apple-darwin.tar.xz"
+      sha256 "7983dcfb194c981a5baa79160879c3a89fa7306b650ca1a0b9d4a22d0a44c8b1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/plugmem/releases/download/v0.2.0/plugmem-mcp-x86_64-apple-darwin.tar.xz"
-      sha256 "cc0239c4c5936ebd225047f61a8dc3b9d870ac3c6e2bf7e57ea777a645b8c079"
+      url "https://github.com/m62624/plugmem/releases/download/v0.3.0/plugmem-mcp-x86_64-apple-darwin.tar.xz"
+      sha256 "41ea253e341fb4ca7f56855f900196e5dcf82ae8ba619a06e89003a17e28ece1"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/plugmem/releases/download/v0.2.0/plugmem-mcp-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "7be1758149de5c98caa96f644b3ec2ea57838c268112df20b550f759b53fd245"
+      url "https://github.com/m62624/plugmem/releases/download/v0.3.0/plugmem-mcp-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "80c1d95207b193ed8aae64b85bad1c6480e3dc9ba0c8ee590b1f4ffef03277a0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/plugmem/releases/download/v0.2.0/plugmem-mcp-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b687a7616a4a6c407c46a96f2887586123db74f9ada35d1ae17db3576b31cc71"
+      url "https://github.com/m62624/plugmem/releases/download/v0.3.0/plugmem-mcp-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f1cbab8e3fb320ded9c30f2a302c1346051c743ba9e0848235b2eea423de7951"
     end
   end
   license "MIT"
