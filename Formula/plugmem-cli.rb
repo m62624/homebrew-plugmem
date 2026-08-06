@@ -1,25 +1,25 @@
 class PlugmemCli < Formula
   desc "CLI for the plugmem embedded memory engine."
   homepage "https://github.com/m62624/plugmem"
-  version "0.7.0"
+  version "0.7.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/plugmem/releases/download/v0.7.0/plugmem-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "c71b472ddf843ccc87d1d776945ae4429c9d10c5a383ee3bab4ff70a2205bb48"
+      url "https://github.com/m62624/plugmem/releases/download/v0.7.1/plugmem-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "c2a05e881f17750a3608bca1a8718a8d3678a6e0cf047a8fa2bf88a8dfc2143c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/plugmem/releases/download/v0.7.0/plugmem-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "5db8cf645b5123d574d360d7fd5f9540a461131301565eb2be40521227b2d718"
+      url "https://github.com/m62624/plugmem/releases/download/v0.7.1/plugmem-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "6881ce4fb1c72e42ed60cd3009ef2f979aeb94342a1aa0db67c3c6dc864a9986"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/plugmem/releases/download/v0.7.0/plugmem-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "c06c31b45fa605c7dc49cf799c8add5606e080eba3e979fc0075597ef7446b9d"
+      url "https://github.com/m62624/plugmem/releases/download/v0.7.1/plugmem-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "778fcc4ceecbbd93f238c636119d4cf04908df18925b65898ae5298db9d72a26"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/plugmem/releases/download/v0.7.0/plugmem-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "a068f90557c009cd28ee4cc2a0999271bf75c40e5ca0531bd9b8fa4ac1814966"
+      url "https://github.com/m62624/plugmem/releases/download/v0.7.1/plugmem-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "ef4555fc17dffe4316a459f50b0ff81fd0b908c3dde455047ce660f5e145df3f"
     end
   end
   license "MIT"
