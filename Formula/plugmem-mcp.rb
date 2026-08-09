@@ -1,25 +1,25 @@
 class PlugmemMcp < Formula
   desc "MCP stdio server exposing plugmem memory to AI agents."
   homepage "https://github.com/m62624/plugmem"
-  version "0.8.0"
+  version "0.9.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/plugmem/releases/download/v0.8.0/plugmem-mcp-aarch64-apple-darwin.tar.xz"
-      sha256 "259b409e5b09d367d15e5a866110b4a0701565857ac16f0dba50a134559eadb8"
+      url "https://github.com/m62624/plugmem/releases/download/v0.9.0/plugmem-mcp-aarch64-apple-darwin.tar.xz"
+      sha256 "e9f2dcbc7154103bbb12fe599fa7cfbe8f61cdc24b0cdb51bf2bed55cd3e3cb2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/plugmem/releases/download/v0.8.0/plugmem-mcp-x86_64-apple-darwin.tar.xz"
-      sha256 "c7ba52a63804f0834279cb2e9644eb25aa72f34f70c4671254c53fa1d98c63eb"
+      url "https://github.com/m62624/plugmem/releases/download/v0.9.0/plugmem-mcp-x86_64-apple-darwin.tar.xz"
+      sha256 "71cbf17359c6f469768e48850edce1a868cadc6370cfc4e8f4bb82d0952fd0c3"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/plugmem/releases/download/v0.8.0/plugmem-mcp-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "19e56c1ed80d2aaa4bf1f764b391a81eb668399616ce9e90fc2425d1f7da5767"
+      url "https://github.com/m62624/plugmem/releases/download/v0.9.0/plugmem-mcp-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "4a7cc85086ea8b0dfe9cde0a70798ef5088003b87a92c04070fbb339d71bf543"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/plugmem/releases/download/v0.8.0/plugmem-mcp-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "948738bbcd3f54d137e9f5b87ad9491481eb9506aa33e6c429f55eeb7b6817ce"
+      url "https://github.com/m62624/plugmem/releases/download/v0.9.0/plugmem-mcp-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "fd05671e7c9973a19780b98608c2f2565eb348e7770746ee63102e9635e79258"
     end
   end
   license "MIT"
@@ -49,10 +49,18 @@ class PlugmemMcp < Formula
   end
 
   def install
-    bin.install "plugmem-mcp" if OS.mac? && Hardware::CPU.arm?
-    bin.install "plugmem-mcp" if OS.mac? && Hardware::CPU.intel?
-    bin.install "plugmem-mcp" if OS.linux? && Hardware::CPU.arm?
-    bin.install "plugmem-mcp" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "plugmem-mcp"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "plugmem-mcp"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "plugmem-mcp"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "plugmem-mcp"
+    end
 
     install_binary_aliases!
 
