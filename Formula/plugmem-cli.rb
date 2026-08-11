@@ -1,25 +1,25 @@
 class PlugmemCli < Formula
   desc "CLI for the plugmem embedded memory engine."
   homepage "https://github.com/m62624/plugmem"
-  version "0.9.0"
+  version "0.10.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/plugmem/releases/download/v0.9.0/plugmem-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "3270008e6b18d4cbdf8cf411228d16e6b9a43741e125b62b78e9642c8ac733f1"
+      url "https://github.com/m62624/plugmem/releases/download/v0.10.0/plugmem-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "e912368e3d99327a97b284fb895f92980440ee945ed67f7fcbf084f2121b4b55"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/plugmem/releases/download/v0.9.0/plugmem-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "f65fcb9c6917c370fb35cee9e6cbc21d83d1ae87c6448e10379942aa0cb8c6bd"
+      url "https://github.com/m62624/plugmem/releases/download/v0.10.0/plugmem-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "1ff53ccc6b85e0cfc11f770fc45d424f7917cb77b4cc02678782abefe6981677"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/m62624/plugmem/releases/download/v0.9.0/plugmem-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "60d6237259994db3882fc1f0da9d90ba4058b0697b6e23a88c84ff29c4708efc"
+      url "https://github.com/m62624/plugmem/releases/download/v0.10.0/plugmem-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "b0a53ce299bb4590e444c47fa9c3078813771fe070ade93b251fc8081379e89f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/m62624/plugmem/releases/download/v0.9.0/plugmem-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "2ab475c2f205b4f0fb6621fa1edd3eeadafc0671b688e7bbf6a36815356f6921"
+      url "https://github.com/m62624/plugmem/releases/download/v0.10.0/plugmem-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "63bb04639c8df7db50a8d4e2c11afb86b4c39f4cc45c8900d4c151e71582d819"
     end
   end
   license "MIT"
@@ -49,10 +49,18 @@ class PlugmemCli < Formula
   end
 
   def install
-    bin.install "plugmem-cli" if OS.mac? && Hardware::CPU.arm?
-    bin.install "plugmem-cli" if OS.mac? && Hardware::CPU.intel?
-    bin.install "plugmem-cli" if OS.linux? && Hardware::CPU.arm?
-    bin.install "plugmem-cli" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "plugmem-cli"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "plugmem-cli"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "plugmem-cli"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "plugmem-cli"
+    end
 
     install_binary_aliases!
 
